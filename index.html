@@ -2,10 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1>
     <title>myblog</title>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script>
+      (function(){
+          var html = document.documentElement;
+          var hWidth = html.getBoundingClientRect().width;
+          console.log( hWidth );
+          html.style.fontSize = hWidth/15 + "px";//15根据需求取值把页面宽度15等分,字体大小就是1rem,比如屏幕宽750px,那么1rem=50px;
+      })()
+    </script>
   </body>
 </html>

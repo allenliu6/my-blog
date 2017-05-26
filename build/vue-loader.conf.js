@@ -10,6 +10,7 @@ module.exports = {
     extract: isProduction
   }),
   postcss: [
-    require('postcss-cssnext')
+    require('postcss-cssnext'),
+    require('cssnano')
   ]
 }

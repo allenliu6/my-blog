@@ -2,10 +2,6 @@
 
 > A Vue.js project
 
-=======
-# my-blog
-personal bolg
-
 
 ## Build Setup
 
