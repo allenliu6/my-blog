@@ -23,4 +23,3 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 =======
 # my-blog
 personal bolg
->>>>>>> dfec7364d8d849e3d78b653aff1eb14c8c6df485
