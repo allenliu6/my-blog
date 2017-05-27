@@ -52,7 +52,6 @@
 
             & ul{
                 display: flex;
-                list-style: none;
                 padding: 0;
                 justify-content: space-around;
 

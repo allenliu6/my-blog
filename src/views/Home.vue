@@ -1,8 +1,8 @@
 <template>
-    <content>
+    <div class="content">
         <b-sidebar></b-sidebar>
         <b-abstract></b-abstract>
-    </content>
+    </div>
 </template>
 
 <script>
@@ -19,5 +19,10 @@
 </script>
 
 <style lang="postcss" scoped>
-    
+    .content{
+        width: 3rem;
+        height: 100%;
+        display: block;
+        padding: 10px;
+    }
 </style>

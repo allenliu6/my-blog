@@ -28,4 +28,12 @@ export default {
 body{
   margin: 0;
 }
+ul{
+  list-style: none;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: #333;
+}
 </style>
