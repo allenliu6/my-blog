@@ -1,10 +1,6 @@
 <template>
     <header>
-        <div class="header_left">
-            <img src="../assets/header.jpg">
-            <h3>Allen's Blog</h3>
-        </div>
-        <nav class="header_right">
+        <nav class="header_nav">
             <ul>
                 <li>主页</li>
                 <li>归档</li>
@@ -14,6 +10,7 @@
                 <li>友链</li>
                 <li>搜索</li>
             </ul>
+            <h3>Allen's Blog</h3>
         </nav>
     </header>
 </template>
@@ -30,30 +27,19 @@
 }
 
     header{
-        width: 15rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 0.3rem;
+        width: 11rem;
+        font-size: 0.2rem;
+        margin: 0 auto;
 
-        & .header_left{
+        & .header_nav{
             display: flex;
             align-items: center;
-            margin-left: 0.5rem;
-
-            & img{
-                height: 1.5rem;
-                border-radius: 0.75rem;
-                margin-right: 0.3rem;
-            }
-        }
-        & .header_right{
-            margin-right: 0.5rem;
+            flex-direction: row-reverse;
 
             & ul{
                 display: flex;
-                padding: 0;
                 justify-content: space-around;
+                margin-left: 50px;
 
                 & li{
                     padding: 10px;
