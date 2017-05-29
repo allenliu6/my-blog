@@ -1,14 +1,32 @@
 <template>
-    <div class="toggle">
-        <span class="toggle_line"></span>
-        <span class="toggle_line"></span>
-        <span class="toggle_line"></span>
+    <div class="toggle" @click="transAnimation">
+        <span class="toggle_line line_first" :class="firstClass"></span>
+
+        <transition name="slide-fade">
+            <span class="toggle_line line_second" v-if="show"></span>
+        </transition>
+        
+        <span class="toggle_line line_third" :class="lastClass"></span>
     </div>
 </template>
 
 <script>
-    export default{
-
+    export default {
+        data(){
+            return {
+                show: true,
+                firstClass: '',
+                lastClass: ''
+            }
+        },
+        methods: {
+            transAnimation(){
+                this.firstClass = this.show ? 'trans-down-leave-active' : 'trans-down-enter-active'
+                this.lastClass = this.show ? 'trans-up-enter-active' : 'trans-up-leave-active'
+                this.show = !this.show
+                this.$store.dispatch('updataSidebar', !this.show)
+            }
+        }
     }
 </script>
 
@@ -16,9 +34,6 @@
     .toggle{
         width: 40px;
         height: 40px;
-        position: fixed;
-        left: 100px;
-        bottom: 100px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -26,8 +41,88 @@
         align-items: center;
 
         & .toggle_line{
-            border: 1px solid #333;
-            width: 70%;
+            border: 2px solid #333;
+            width: 24px;
+        }
+    }
+
+//动画
+    .slide-fade-enter-active {
+        transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-active {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    .trans-down-enter-active{
+        animation: transdown-out .5s forwards;
+        transform-origin: 0 0;
+    }
+
+    .trans-down-leave-active{
+        animation: transdown-in .5s forwards;
+        transform-origin: 0 0;
+    }
+    
+    @keyframes transdown-in{
+        0% {
+            transform: rotate(0deg)
+        }
+        50% {
+            transform: rotate(30deg)
+        }
+        100% {
+            transform: rotate(45deg)
+        }
+    }
+
+    @keyframes transdown-out{
+        0% {
+            transform: rotate(45deg)
+        }
+        50% {
+            transform: rotate(30deg)
+        }
+        100% {
+            transform: rotate(0deg)
+        }
+    }
+
+    .trans-up-enter-active{
+        animation: transup-in .5s forwards;
+        transform-origin: 0 0;
+    }
+
+    .trans-up-leave-active{
+        animation: transup-out .5s forwards;
+        transform-origin: 0 0;
+    }
+    
+    @keyframes transup-in{
+        0% {
+            transform: rotate(0deg)
+        }
+        50% {
+            transform: rotate(-30deg)
+        }
+        100% {
+            transform: rotate(-45deg)
+        }
+    }
+
+    @keyframes transup-out{
+        0% {
+            transform: rotate(-45deg)
+        }
+        50% {
+            transform: rotate(-30deg)
+        }
+        100% {
+            transform: rotate(0deg)
         }
     }
 </style>
