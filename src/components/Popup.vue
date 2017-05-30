@@ -19,12 +19,13 @@
                 lastClass: ''
             }
         },
+        props: ['fatherName'],
         methods: {
             transAnimation(){
                 this.firstClass = this.show ? 'trans-down-leave-active' : 'trans-down-enter-active'
                 this.lastClass = this.show ? 'trans-up-enter-active' : 'trans-up-leave-active'
                 this.show = !this.show
-                this.$store.dispatch('updataSidebar', !this.show)
+                this.$store.dispatch('updata' + this.fatherName, !this.show)
             }
         }
     }
@@ -47,17 +48,6 @@
     }
 
 //动画
-    .slide-fade-enter-active {
-        transition: all .3s ease;
-    }
-    .slide-fade-leave-active {
-        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-fade-enter, .slide-fade-leave-active {
-        transform: translateX(10px);
-        opacity: 0;
-    }
-
     .trans-down-enter-active{
         animation: transdown-out .5s forwards;
         transform-origin: 0 0;

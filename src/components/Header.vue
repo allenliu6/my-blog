@@ -1,30 +1,65 @@
 <template>
     <header>
-        <nav class="header_nav">
-            <ul>
-                <li>主页</li>
-                <li>归档</li>
-                <li>分类</li>
-                <li>关于</li>
-                <li>作品</li>
-                <li>友链</li>
-                <li>搜索</li>
-            </ul>
-            <h3>Allen's Blog</h3>
-        </nav>
+        <transition name="slide-fade">
+            <nav class="header_nav" v-if="show">
+                <ul>
+                    <li>主页</li>
+                    <li>归档</li>
+                    <li>分类</li>
+                    <li>关于</li>
+                    <li>作品</li>
+                    <li>友链</li>
+                    <li>搜索</li>
+                </ul>
+                <h3>Allen's Blog</h3>
+            </nav>
+        </transition>
+        <b-popup class="header_toggle" :fatherName="'Header'"></b-popup>
     </header>
 </template>
 
 <<script>
+    import bPopup from './Popup'
+    import {mapGetters} from 'vuex'
+
     export default{
-        
+        components: {
+            bPopup
+        },
+        computed: {
+            ...mapGetters({
+                show: 'header',
+                mobile: 'mobile'
+            })
+        },
+        created(){
+            let timer = true,
+                that = this
+
+            this.resize()
+            window.onresize = function(){
+                if (timer) {
+                    that.resize()
+                    timer = false
+                    timer = setTimeout(function() {
+                        timer = true
+                    }, 500)
+                }
+            }
+        },
+        methods: {
+            resize(){
+                if(window.innerWidth > 900 && this.mobile){
+                    this.$store.dispatch('updataMobile', false)
+                }else if(window.innerWidth <= 900 && !this.mobile){
+                    this.$store.dispatch('updataMobile', true)
+                }
+            }
+        }
     }
 </script>
 
 <<style lang="postcss" scoped>
-:root{
-    --heading-color: red;
-}
 
     header{
         width: 11rem;
@@ -45,7 +80,36 @@
                     padding: 10px;
                 }
             }
+
+            & h3{
+                padding: 10px;
+            }
         }
-        
+
+        & .header_toggle{
+            position: fixed;
+            right: 5px;
+            top: 5px;
+        }
     }
+
+@media (width <= 900px){
+    header{
+
+        & .header_nav{
+            flex-direction: column;
+
+            & ul{
+                flex-direction: column;
+                position: fixed;
+                right: 40px;
+                top: 0;
+            }
+        }
+    }
+
+    .slide-fade-enter, .slide-fade-leave-active {
+        transform: translateX(10px);
+    }
+}
 </style>

@@ -9,7 +9,6 @@
     import bSidebar from '../components/Sidebar'
     import bAbstract from '../components/Abstract'
     
-    
     export default {
         components: {
             bSidebar,
