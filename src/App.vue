@@ -23,15 +23,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-size: initial;
 }
 body{
   margin: 0;
+  font-size: 16px;
 }
 ul{
   list-style: none;
   padding: 0;
   margin: 0;
+}
+li{
+  text-align: left;
 }
 a{
   text-decoration: none;
@@ -39,6 +42,9 @@ a{
 }
 h1,h2,h3,h4,h5,h6{
   margin: 0;
+}
+input,textarea{
+  outline: none;
 }
 
 //动画
