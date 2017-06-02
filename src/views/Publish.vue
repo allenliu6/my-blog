@@ -5,7 +5,7 @@
             <article v-html="markdown(md)" class="body_show markdown-body"></article>
         </section>
          <section class="header">
-            <input type="text" class="header_title" placeholder="欢迎使用markdown编辑器，点击编辑">
+            <input type="text" class="header_title" placeholder="文章标题" v-model="title">
             <button class="header_submit">发表博客</button>
             <ul class="header_tool">
                 <li></li>
@@ -25,7 +25,8 @@
         data(){
             return {
                 md: '',
-                mark: ''
+                mark: '',
+                title: "欢迎使用markdown编辑器，点击编辑"
             }
         },
         methods: {
@@ -65,6 +66,11 @@
                 height: 40px;
                 font-size: 22px;
                 border: 0;
+                color: #b1b1b1;
+
+                &:focus{
+                    color: #333;
+                }
             }
 
             & .header_submit{
