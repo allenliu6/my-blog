@@ -1,7 +1,7 @@
 <template>
     <content class="publish">
         <section class="body">
-            <textarea v-model="md" class="body_edit"></textarea>
+            <textarea v-model="md" class="body_edit" @keydown.tab.prevent="changeDefault"></textarea>
             <article v-html="markdown(md)" class="body_show markdown-body"></article>
         </section>
          <section class="header">
@@ -32,6 +32,9 @@
         methods: {
             markdown(){
                 return marked(this.md)
+            },
+            changeDefault(){
+                this.md += '    '
             }
         }
     }
