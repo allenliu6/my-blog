@@ -52,6 +52,7 @@
         background: #f1f1f1;
         display: flex;
         flex-direction: column-reverse;
+        
 
         & .header{
             width: 80%;
@@ -91,7 +92,7 @@
                 width: 100%;
                 
             }
-            
+
         }
 
         & .body{
