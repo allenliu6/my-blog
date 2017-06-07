@@ -52,7 +52,7 @@
         background: #f1f1f1;
         display: flex;
         flex-direction: column-reverse;
-        
+
 
         & .header{
             width: 80%;
@@ -64,6 +64,7 @@
             background-color: #fff;
             flex-wrap: wrap;
             margin-top: 5%;
+            
 
             & .header_title{
                 width: 60%;
