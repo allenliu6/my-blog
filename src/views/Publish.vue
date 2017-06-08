@@ -64,7 +64,7 @@
             background-color: #fff;
             flex-wrap: wrap;
             margin-top: 5%;
-            
+
 
             & .header_title{
                 width: 60%;
@@ -72,6 +72,7 @@
                 font-size: 22px;
                 border: 0;
                 color: #b1b1b1;
+                
 
                 &:focus{
                     color: #333;
