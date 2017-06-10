@@ -112,6 +112,7 @@
                 border: 0;
                 font-size: 20px;
                 border-right: 1px solid #333;
+                
             }
 
             & .body_show{
@@ -119,7 +120,7 @@
                 overflow: scroll;
                 font-size: 20px;
                 text-align: left;
-                
+
             }
         }
     }
