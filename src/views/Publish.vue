@@ -86,6 +86,7 @@
                 border-radius: 5px;
                 padding: 5px 10px;
                 font-size: 18px;
+                
             }
 
             & .header_tool{
