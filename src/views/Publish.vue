@@ -72,6 +72,7 @@
                 font-size: 22px;
                 border: 0;
                 color: #b1b1b1;
+                
 
 
                 &:focus{
@@ -86,7 +87,7 @@
                 border-radius: 5px;
                 padding: 5px 10px;
                 font-size: 18px;
-                
+
             }
 
             & .header_tool{
