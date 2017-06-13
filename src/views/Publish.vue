@@ -72,7 +72,7 @@
                 font-size: 22px;
                 border: 0;
                 color: #b1b1b1;
-                
+
 
 
                 &:focus{
@@ -122,6 +122,7 @@
                 overflow: scroll;
                 font-size: 20px;
                 text-align: left;
+                
 
             }
         }
