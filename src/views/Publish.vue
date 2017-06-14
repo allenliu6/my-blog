@@ -122,7 +122,7 @@
                 overflow: scroll;
                 font-size: 20px;
                 text-align: left;
-                
+
 
             }
         }
