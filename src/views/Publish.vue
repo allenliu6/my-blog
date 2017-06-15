@@ -64,6 +64,7 @@
             background-color: #fff;
             flex-wrap: wrap;
             margin-top: 5%;
+            
 
 
             & .header_title{
