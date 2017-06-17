@@ -52,7 +52,7 @@
         background: #f1f1f1;
         display: flex;
         flex-direction: column-reverse;
-        
+
 
 
         & .header{
@@ -108,6 +108,7 @@
             display: flex;
             height: 75%;
             justify-content: space-around;
+            
 
             & .body_edit{
                 width: 45%;
