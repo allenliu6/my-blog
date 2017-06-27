@@ -109,6 +109,7 @@
             height: 75%;
             justify-content: space-around;
             
+            
 
             & .body_edit{
                 width: 45%;
